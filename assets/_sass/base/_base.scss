@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 43px; /* Margin bottom by footer height */
+}
+
+.main-content {
+  font-family: $main-font;
+}

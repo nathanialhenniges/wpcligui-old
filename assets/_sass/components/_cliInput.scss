@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// This file contains cli input component styles.
+// -----------------------------------------------------------------------------
+.cli-input {
+  .head {
+    h3 {
+        font-family: $secondary-font;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    p {
+      color: #000000;
+    }
+
+  }
+}
