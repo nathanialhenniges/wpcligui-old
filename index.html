@@ -1,6 +1,81 @@
 <!doctype html>
 <html lang="en">
+
+<head>
+  <title>WP CLI GUI</title>
+  <!-- Basic Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simple GUI to help you install wordpress via the WP CLI">
+  <link rel="shortcut-icon" href="./favico.ico">
+
+  <!-- Load Bootstrap Styles -->
+  <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.min.css">
+  <!-- Load Cusdtom Styles -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+
+</head>
+
 <body>
-  <h1>Hello World</h1>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-default navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">WP CLI GUI</a>
+      </div>
+    </nav>
+  </header>
+  <!-- End Navbar -->
+  <!-- Main Content -->
+  <main class="container main-content mt-2">
+    <div class="row">
+      <!-- Cli input-->
+      <div class="col-6 cli-input">
+        <!-- Header -->
+        <div class="head">
+          <h3>
+            Input
+          </h3>
+          <p>
+            Here is where you will input all the infomation you want to used to generate your WP CLI command.
+          </p>
+        </div>
+      </div>
+      <!-- Cli output-->
+      <div class="col-6 cli-output">
+        <!-- Header -->
+        <div class="head">
+          <h3>
+            Output
+          </h3>
+          <p>
+            Here is where you can put what you want to copy to paste for WP CLI
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
+<footer>
+  <div class="copyright container">
+    <div class="col-12">
+      <div class="text copyright">
+        Copyright &copy;
+        <script>document.write(new Date().getFullYear())</script>
+        Nathan Henniges
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Load jQuery Javascript-->
+<script type="text/javascript" src="./assets/lib/jquery/js/jquery.min.js"></script>
+
+<!-- Load Bootstrap Javascript -->
+<script type="text/javascript" src="./assets/lib//bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Load Custom Javascript -->
+<script type="text/javascript" src="./assets/js/main.js"></script>
+
 </html>
