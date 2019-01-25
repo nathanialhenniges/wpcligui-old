@@ -241,7 +241,7 @@ $(document).ready(function () {
     var alldbCreate = '';
     var dbCreate = '';
 
-    if (dbDetails.createDb) {
+    if (dbDetails.createDb === true) {
       alldbCreate = " && wp db create"
       dbCreate = "wp db create"
     } else {
