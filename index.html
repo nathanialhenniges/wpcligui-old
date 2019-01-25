@@ -52,9 +52,9 @@
         <div class="head">
           <h3>Download WordPress</h3>
         </div>
-        <div class="wpConfig mt-2">
+        <div class="wpConfig">
           <!-- WordPress Download Config -->
-          <div id="dlConfig mt-2">
+          <div id="dlConfig">
             <!-- WordPress CLI path -->
             <!-- --path= -->
             <div class="wpCli">
@@ -63,12 +63,13 @@
               <button id="otherPathBtn" class="path-btn btn btn-outline-primary">Other Dir</button>
             </div>
             <div id="otherPath" class="input-group mt-3" style="display:none;">
+              Other Path
               <input type="text" class="form-control" placeholder="/var/www/html/wordpress">
             </div>
           </div>
           <!-- WordPress Database Config -->
           <!-- wp core config --dbhost= --dbname= --dbprefix=wp_ --dbuser= --dbpass="" -->
-          <div id="dbconfig" class="mt2">
+          <div id="dbconfig" class="mt-2">
             <div class="wpCli">
               <div class="title-block">
                 <h3>DB configuration</h3>
@@ -91,11 +92,11 @@
               </div>
               <div class="input-group">
                 Database password
-                <input id="dbpass" type="text" class="form-control">
+                <input id="dbPass" type="text" class="form-control">
               </div>
               <p>Create the database</p>
-              <button id="createDBBtn" class="path-btn btn btn-outline-primary active">Yes</button>
-              <button id="nocreateDBBtn" class="path-btn btn btn-outline-primary">No</button>
+              <button id="createDBBtn" class="db-btn btn btn-outline-primary active">Yes</button>
+              <button id="nocreateDBBtn" class="db-btn btn btn-outline-primary">No</button>
             </div>
           </div>
           <div id="siteConfig" class="mt-2">
@@ -113,6 +114,25 @@
               </div>
             </div>
           </div>
+          <div id="accountInfo" class="mt-2">
+            <div class="wpCli">
+              <div class="title-block">
+                <h3>Account Create</h3>
+              </div>
+              <div class="input-group">
+                Username
+                <input id="userName" type="text" class="form-control" placeholder="admin">
+              </div>
+              <div class="input-group">
+                password
+                <input id="userPass" type="text" class="form-control" placeholder="pass">
+              </div>
+              <div class="input-group">
+                Email
+                <input id="userEmail" type="email" class="form-control" placeholder="example@example.com">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Cli output-->
@@ -124,36 +144,43 @@
             <p>Just Copy and paste. Enjoy :)</p>
           </div>
           <!-- Output Commands -->
-          <!-- Download Only Command -->
           <div class="output">
-            <h4>All commands</h4>
+            <div class="mt-2">
+              <h4>All commands</h4>
+              <div class="zero-clipboard">
+                <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#allCommands">
+                  <i class="fa fa-clipboard"></i>
+                </span>
+              </div>
+              <pre class="w-100 py-4" id="allCommands"></pre>
+            </div>
+          </div>
+          <div class="mt-2">
+            <h4>Download WordPress</h4>
             <div class="zero-clipboard">
-              <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#allCommands">
+              <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#downloadCommand">
                 <i class="fa fa-clipboard"></i>
               </span>
+              <pre class="w-100 py-4" id="downloadCommand"></pre>
             </div>
-            <pre class="w-100 py-4" id="allCommands"></pre>
           </div>
-          <h4>Download WordPress</h4>
-          <div class="zero-clipboard">
-            <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#downloadCommand">
-              <i class="fa fa-clipboard"></i>
-            </span>
-            <pre class="w-100 py-4" id="downloadCommand"></pre>
+          <div class="mt-2">
+            <h4>Config WordPress</h4>
+            <div class="zero-clipboard">
+              <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#configCommand">
+                <i class="fa fa-clipboard"></i>
+              </span>
+              <pre class="w-100 py-4" id="configCommand"></pre>
+            </div>
           </div>
-          <h4>Config WordPress</h4>
-          <div class="zero-clipboard">
-            <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#configCommand">
-              <i class="fa fa-clipboard"></i>
-            </span>
-            <pre class="w-100 py-4" id="configCommand"></pre>
-          </div>
-          <h4>Install WordPress</h4>
-          <div class="zero-clipboard">
-            <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#installCommand">
-              <i class="fa fa-clipboard"></i>
-            </span>
-            <pre id="installCommand"></pre>
+          <div class="mt-2">
+            <h4>Install WordPress</h4>
+            <div class="zero-clipboard">
+              <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#installCommand">
+                <i class="fa fa-clipboard"></i>
+              </span>
+              <pre id="installCommand"></pre>
+            </div>
           </div>
         </div>
       </div>
@@ -182,6 +209,6 @@
 <script type="text/javascript" src="./assets/lib/clipboardjs/js/clipboard.js"></script>
 
 <!-- Load Custom Javascript -->
-<script type="text/javascript" src="./assets/_js/main.js"></script>
+<script type="text/javascript" src="./assets/js/main.js"></script>
 
 </html>
