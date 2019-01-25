@@ -16,7 +16,6 @@ var plumber = require('gulp-plumber');
 var pngquant = require('imagemin-pngquant');
 var postcss = require('gulp-postcss');
 var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var webpack = require('webpack-stream')
 
@@ -127,14 +126,13 @@ gulp.task('eslint', function () {
  *
  * Bundle JavaScript files
  */
-gulp.task('webpack', ['eslint'], function () {
+gulp.task('webpack', function () {
   return gulp.src(entry)
     .pipe(plumber())
     .pipe(named())
     .pipe(webpack({
       watch: argv.watch ? true : false,
     }))
-    .pipe(uglify())
     .pipe(gulp.dest(paths.js));
 });
 
