@@ -3,6 +3,9 @@
 // -----------------------------------------------------------------------------
 .cli-output {
     .head {
+              background-color: #fcfcfc;
+        border-bottom: solid 1px #000;
+
         h3 {
             font-family: $secondary-font;
             font-size: 2rem;
@@ -10,7 +13,66 @@
         }
 
         p {
-            color: #000000;
+            color: #000;
         }
+    }
+
+    .output {
+        h3 {
+            font-family: $secondary-font;
+            font-weight: 700;
+        }
+    }
+
+    .zero-clipboard {
+        position: relative;
+
+        .btn-clipboard {
+            position: absolute;
+            top: 15px;
+            right: 0;
+            z-index: 10;
+            display: block;
+            padding: 5px 8px;
+            font-weight: 400;
+            font-size: 12px;
+            color: #292929;
+            border-radius: 0 4px 0 4px;
+            background-color: #f1f1f1;
+            transition: color 300ms ease;
+            cursor: pointer;
+        }
+    }
+
+    pre {
+        padding: 6px 10px 6px 10px;
+        background-color: #444;
+        border-radius: .4em;
+        border: 0;
+        white-space: pre-wrap;
+        font-weight: 400;
+        font-size: 15px;
+        color: #f7f7f7;
+    }
+
+    blockquote, p, input, ul, ol, pre {
+        margin: 15px 0 0 0;
+    }
+}
+
+.cli-output {
+    .content-scroll {
+        margin-top: 15rem;
+    }
+}
+.cli-output .content {
+    position:fixed;
+    width:32%;
+}
+
+@media (max-width: 767.98px) {
+    .cli-output .content {
+        position:static;
+        width:100%;
     }
 }

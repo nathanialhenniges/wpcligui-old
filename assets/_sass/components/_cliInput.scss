@@ -2,15 +2,27 @@
 // This file contains cli input component styles.
 // -----------------------------------------------------------------------------
 .cli-input {
-  .head {
-    h3 {
-        font-family: $secondary-font;
-        font-size: 2rem;
-        font-weight: 700;
+    .form-control {
+      width: 100%;
     }
-    p {
-      color: #000000;
+    .head {
+        background-color: #fcfcfc;
+        border-bottom: solid 1px #000;
+
+        h3 {
+            font-family: $secondary-font;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        p {
+            color: #000;
+        }
     }
 
-  }
+    .wpCli {
+        .title-block {
+            font-family: $secondary-font;
+        }
+    }
 }

@@ -9,20 +9,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Simple GUI to help you install wordpress via the WP CLI">
   <link rel="shortcut-icon" href="./favico.ico">
-
   <!-- Load Bootstrap Styles -->
   <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.min.css">
+
+  <!-- Load Font-awesome Styles -->
+  <link rel="stylesheet" href="./assets/lib/font-awsome/css/fontawesome-all.min.css">
+
   <!-- Load Cusdtom Styles -->
   <link rel="stylesheet" href="./assets/css/main.css">
-
 </head>
 
 <body>
   <!-- Navbar -->
   <header>
-    <nav class="navbar navbar-default navbar-expand-lg">
+    <nav class="navbar navbar-default navbar-expand-lg navbar-light fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">WP CLI GUI</a>
+        <button class="navbar-toggler" role="button" data-toggle="collapse" data-target="mainNavbar" aria-controls="mainNavbar"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#dlConfig">DL Config</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=""></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -31,34 +47,148 @@
   <main class="container main-content mt-2">
     <div class="row">
       <!-- Cli input-->
-      <div class="col-6 cli-input">
+      <div class="col-md-6 cli-input ">
         <!-- Header -->
         <div class="head">
-          <h3>
-            Input
-          </h3>
-          <p>
-            Here is where you will input all the infomation you want to used to generate your WP CLI command.
-          </p>
+          <h3>Download WordPress</h3>
+        </div>
+        <div class="wpConfig">
+          <!-- WordPress Download Config -->
+          <div id="dlConfig">
+            <!-- WordPress CLI path -->
+            <!-- --path= -->
+            <div class="wpCli">
+              <p class="title-block">WordPress root dir</p>
+              <button id="currentPathBtn" class="path-btn btn btn-outline-primary active">Current Dir</button>
+              <button id="otherPathBtn" class="path-btn btn btn-outline-primary">Other Dir</button>
+            </div>
+            <div id="otherPath" class="input-group mt-3" style="display:none;">
+              Other Path
+              <input type="text" class="form-control" placeholder="/var/www/html/wordpress">
+            </div>
+          </div>
+          <!-- WordPress Database Config -->
+          <!-- wp core config --dbhost= --dbname= --dbprefix=wp_ --dbuser= --dbpass="" -->
+          <div id="dbconfig" class="mt-2">
+            <div class="wpCli">
+              <div class="title-block">
+                <h3>DB configuration</h3>
+              </div>
+              <div class="input-group">
+                Database host
+                <input id="dbHost" type="text" class="form-control" value="localhost">
+              </div>
+              <div class="input-group">
+                Database name
+                <input id="dbName" type="text" class="form-control">
+              </div>
+              <div class="input-group">
+                Database prefix
+                <input id="dbPrefix" type="text" class="form-control" value="wpdw_">
+              </div>
+              <div class="input-group">
+                Database user
+                <input id="dbUser" type="text" class="form-control">
+              </div>
+              <div class="input-group">
+                Database password
+                <input id="dbPass" type="text" class="form-control">
+              </div>
+              <p>Create the database</p>
+              <button id="createDBBtn" class="db-btn btn btn-outline-primary active">Yes</button>
+              <button id="nocreateDBBtn" class="db-btn btn btn-outline-primary">No</button>
+            </div>
+          </div>
+          <div id="siteConfig" class="mt-2">
+            <div class="wpCli">
+              <div class="title-block">
+                <h3>Site Config</h3>
+              </div>
+              <div class="input-group">
+                Name
+                <input id="siteName" type="text" class="form-control" placeholder="Just another WordPress Site">
+              </div>
+              <div class="input-group">
+                URL
+                <input id="siteURL" type="text" class="form-control" placeholder="http://localhost">
+              </div>
+            </div>
+          </div>
+          <div id="accountInfo" class="mt-2">
+            <div class="wpCli">
+              <div class="title-block">
+                <h3>Account Create</h3>
+              </div>
+              <div class="input-group">
+                Username
+                <input id="userName" type="text" class="form-control" placeholder="admin">
+              </div>
+              <div class="input-group">
+                password
+                <input id="userPass" type="text" class="form-control" placeholder="pass">
+              </div>
+              <div class="input-group">
+                Email
+                <input id="userEmail" type="email" class="form-control" placeholder="example@example.com">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Cli output-->
-      <div class="col-6 cli-output">
-        <!-- Header -->
-        <div class="head">
-          <h3>
-            Output
-          </h3>
-          <p>
-            Here is where you can put what you want to copy to paste for WP CLI
-          </p>
+      <div class="col-md-6 cli-output">
+        <div class="content ">
+          <!-- Header -->
+          <div class="head">
+            <h3>Commands</h3>
+            <p>Just Copy and paste. Enjoy :)</p>
+          </div>
+          <!-- Output Commands -->
+          <div class="output">
+            <div class="mt-2">
+              <h4>All commands</h4>
+              <div class="zero-clipboard">
+                <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#allCommands">
+                  <i class="fa fa-clipboard"></i>
+                </span>
+              </div>
+              <pre class="w-100 py-4" id="allCommands"></pre>
+            </div>
+          </div>
+          <div class="mt-2">
+            <h4>Download WordPress</h4>
+            <div class="zero-clipboard">
+              <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#downloadCommand">
+                <i class="fa fa-clipboard"></i>
+              </span>
+              <pre class="w-100 py-4" id="downloadCommand"></pre>
+            </div>
+          </div>
+          <div class="mt-2">
+            <h4>Config WordPress</h4>
+            <div class="zero-clipboard">
+              <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#configCommand">
+                <i class="fa fa-clipboard"></i>
+              </span>
+              <pre class="w-100 py-4" id="configCommand"></pre>
+            </div>
+          </div>
+          <div class="mt-2">
+            <h4>Install WordPress</h4>
+            <div class="zero-clipboard">
+              <span class="btn-clipboard" data-clipboard-action="copy" data-clipboard-target="#installCommand">
+                <i class="fa fa-clipboard"></i>
+              </span>
+              <pre id="installCommand"></pre>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </main>
 </body>
 <footer>
-  <div class="copyright container">
+  <div class="copyright container fixed-bottom">
     <div class="col-12">
       <div class="text copyright">
         Copyright &copy;
@@ -73,7 +203,10 @@
 <script type="text/javascript" src="./assets/lib/jquery/js/jquery.min.js"></script>
 
 <!-- Load Bootstrap Javascript -->
-<script type="text/javascript" src="./assets/lib//bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="./assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Load Clipboard Javascript -->
+<script type="text/javascript" src="./assets/lib/clipboardjs/js/clipboard.js"></script>
 
 <!-- Load Custom Javascript -->
 <script type="text/javascript" src="./assets/js/main.js"></script>
