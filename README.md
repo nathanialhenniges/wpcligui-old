@@ -1,5 +1,5 @@
 # wpcligui
-New WP CLI GUI as the old one is down.
+A GUI for a command line interface for WordPres
 
 ## Copyright and License
 
