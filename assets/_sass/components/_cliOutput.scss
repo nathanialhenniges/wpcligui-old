@@ -3,7 +3,8 @@
 // -----------------------------------------------------------------------------
 .cli-output {
     .head {
-              background-color: #fcfcfc;
+      padding: 16px;
+              background-color: #303030;
         border-bottom: solid 1px #000;
 
         h3 {
@@ -13,7 +14,7 @@
         }
 
         p {
-            color: #000;
+            color: #ffffff;
         }
     }
 
@@ -56,7 +57,7 @@
     }
 
     blockquote, p, input, ul, ol, pre {
-        margin: 15px 0 0 0;
+        margin: 12px 0 0 0;
     }
 }
 
