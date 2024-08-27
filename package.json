@@ -30,7 +30,7 @@
     "gulp-watch": "^4.3.11",
     "imagemin-pngquant": "^5.0.1",
     "vinyl-named": "^1.1.0",
-    "webpack-stream": "^4.0.0",
+    "webpack-stream": "^7.0.0",
     "yargs": "^9.0.1"
   },
   "repository": {
